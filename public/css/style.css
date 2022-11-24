@@ -14,7 +14,7 @@ body {
 }
 
 .logo {
-    width: 50%;
+    width: 55%;
     text-align: center;
 }
 
@@ -25,21 +25,43 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
 
     width: 80%;
-    height: 20vw;
+    height: 22vw;
     background: #FFFFFFF5 0% 0% no-repeat padding-box;
     box-shadow: inset 0px 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 30px;
 }
 
+.sign {
+    font: normal normal bold 28px/40px Segoe UI;
+    margin-top: 0.8em;
+}
+
+.reflink {
+    width: 70%;
+    margin-top: 0.5em;
+    text-align: left;
+    font: normal normal normal 15px/20px Segoe UI;
+}
+
+.reflink > p {
+    display: inline-block;
+}
+
+.reflink > a {
+    font: normal normal bold 15px/20px Segoe UI;
+    color: #FF7C00;
+}
+
 button {
     width: 42%;
     border: none;
     color: white;
+    font: normal normal bold 15px/20px Segoe UI;
     margin: 1em;
     line-height: 2.7em;
     background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
@@ -50,6 +72,7 @@ button {
 
 input {
     background: #FFFFFFAB 0% 0% no-repeat padding-box;
+    font: normal normal normal 15px/20px Segoe UI;
     border: 1px solid #707070;
     border-radius: 41px;
     padding: 1em;
