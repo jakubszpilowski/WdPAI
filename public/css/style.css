@@ -18,6 +18,10 @@ body {
     text-align: center;
 }
 
+img {
+    max-width: 100%;
+}
+
 .login-container {
     width: 32%;
 }
@@ -28,8 +32,8 @@ form {
     justify-content: top;
     align-items: center;
 
-    width: 80%;
-    height: 22vw;
+    width: min(80%, 25rem);
+    height: min(100%, 100rem);
     background: #FFFFFFF5 0% 0% no-repeat padding-box;
     box-shadow: inset 0px 6px 6px #00000029;
     border: 1px solid #707070;
@@ -37,19 +41,18 @@ form {
 }
 
 .sign {
-    font: normal normal bold 25px/32px Segoe UI;
-    margin-top: 0.5em;
+    font: normal normal bold 1.563rem/2rem Segoe UI;
 }
 
 .reflink {
     width: 70%;
     margin-top: 0.5em;
     text-align: left;
-    font: normal normal normal 12px/18px Segoe UI;
+    font: normal normal normal 0.75rem/1.125rem Segoe UI;
 }
 
 .reflink > p > a {
-    font: normal normal bold 12px/18px Segoe UI;
+    font: normal normal bold 0.75rem/1.125rem Segoe UI;
     color: #FF7C00;
 }
 
@@ -65,7 +68,7 @@ button {
     width: 60%;
     border: none;
     color: white;
-    font: normal normal bold 15px/18px Segoe UI;
+    font: normal normal bold 0.938rem/1.125rem Segoe UI;
     margin: 1em;
     line-height: 2.7em;
     background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
@@ -91,7 +94,7 @@ button {
 
 input {
     background: #FFFFFFAB 0% 0% no-repeat padding-box;
-    font: normal normal normal 12px/18px Segoe UI;
+    font: normal normal normal 0.75rem/1.125rem Segoe UI;
     border: 1px solid #707070;
     border-radius: 41px;
     padding: 1em;
@@ -102,18 +105,27 @@ input {
 
 @media only screen and (max-device-width: 420px) {
     .container {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     * {
-        font-size: 36px;
+        font-size: 2rem;
     }
 
     .login-container, .logo {
-        width: 100%;
+        width: 90%;
+    }
+
+    .logo {
+        text-align: right;
     }
 
     form {
         margin: auto;
+        height: min(100%, 100rem);
+    }
+
+    .reflink > p {
+        font-size: 0.8rem;
     }
 }
