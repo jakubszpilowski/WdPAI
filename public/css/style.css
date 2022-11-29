@@ -126,6 +126,14 @@ input {
     }
 
     .reflink > p {
-        font-size: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .reflink > p > a {
+        font-size: 1rem;
+    }
+
+    .register-button {
+        flex-direction: column-reverse;
     }
 }
