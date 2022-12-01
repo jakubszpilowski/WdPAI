@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    
+}
+
+.contents {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center; 
+}
+
+.bar {
+    width: 100vw;
+    height: 10%;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: left;
+}
+
+.menu {
+    display: none;
+}
+
+.pages {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages > button {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 19px;
+    border: 1px solid #707070;
+    display: inline-block;
+    margin-right: 0.2rem;
+    height: 60%;
+    width: 33%;
+    font: normal normal bold 0.75rem/1.125rem Segoe UI;
+    color: #FF7C00;
+}
+
+.pages > button > img {
+    width: 25%;
+    height: 75%;
+}
+
+.logo {
+    width: 25%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.logo > img {
+    height: 4.5rem;
+    max-width: 80%;
+}
+
+.icons {
+    width: 25%;
+    height: 100%;
+    margin-left: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons > img {
+    margin-left: 1.5rem;
+    height: 2rem;
+    max-width: 100%;
+    max-height: 60%;
+}
+
+.container {
+    width: 90%;
+    height: 80%;
+    margin: auto;
+
+    background: #FFFFFFF5 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 6px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 30px;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .bar {
+        justify-content: left;
+        align-items: center;
+    }
+
+    .logo {
+        width: 75%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0em;
+    }
+
+    .logo > img {
+        width: 100%;
+        height: 90%;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        width: 20%;
+        height: 100%;  
+    }
+
+    .menu >  img {
+        width: 50%;
+        height: 25%;
+    }
+
+    .icons, 
+    .pages {
+        display: none;
+    }
+}
