@@ -87,14 +87,80 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     width: 90%;
-    height: 80%;
+    height: 100%;
     margin: auto;
+}
 
-    background: #FFFFFFF5 0% 0% no-repeat padding-box;
+.container > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem;
+    margin-bottom: 0;
+
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
     box-shadow: inset 0px 6px 6px #00000029;
     border: 1px solid #707070;
-    border-radius: 30px;
+    border-radius: 38px;
+    width: 45%;
+    height: 7%;
+
+    font: normal normal normal 1.8rem/4rem Arial;
+    color: #fefefe;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 2rem;
+    width: 90%;
+    height: 60%;
+}
+
+section > * {
+    border-radius: 25px;
+    border: solid 1px #808080;
+}
+
+.note {
+    background: #BAC00021 0% 0% no-repeat padding-box;
+    width: 30%;
+    height: 85%;
+}
+
+.second {
+    align-items: flex-start;
+    width: 50%;
+}
+
+.action-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: #BAC00021 0% 0% no-repeat padding-box;
+    width: 45%;
+    height: 28%;
+    font: normal normal bold 1.875rem/2.375rem Arial;
+    color: #FF7C00;
+}
+
+.action-button > * {
+    margin-left: 2rem;
+}
+
+.action-button > img {
+    height: 30%;
 }
 
 @media only screen and (max-device-width: 420px) {
@@ -126,11 +192,48 @@ body {
 
     .menu >  img {
         width: 50%;
-        height: 25%;
+        height: 30%;
     }
 
     .icons, 
     .pages {
         display: none;
+    }
+
+    .container {
+        height: 85%;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .container > p {
+        width: 75%;
+        font-size: 3rem;
+        
+    }
+
+    .first {
+        height: 70%;
+        flex-direction: column;
+        justify-content: start;
+    }
+    
+    .first > * + * {
+        margin-top: 2rem;
+    }
+
+    .second {
+        height: 15%;
+        width: 75%;
+    }
+
+    .note {
+        width: 90%;
+        height: 30%;
+        margin-right: 0;
+    }
+
+    .action-button {
+        height: 45%;
     }
 }
