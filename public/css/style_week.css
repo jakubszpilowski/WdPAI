@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    
+}
+
+.contents {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center; 
+}
+
+.bar {
+    width: 100vw;
+    height: 10%;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: left;
+}
+
+.menu {
+    display: none;
+}
+
+.pages {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pages > button {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 19px;
+    border: 1px solid #707070;
+    display: inline-block;
+    margin-right: 0.2rem;
+    height: 60%;
+    width: 33%;
+    font: normal normal bold 0.75rem/1.125rem Segoe UI;
+    color: #FF7C00;
+}
+
+.pages > button > img {
+    width: 25%;
+    height: 75%;
+}
+
+.logo {
+    width: 25%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.logo > img {
+    height: 4.5rem;
+    max-width: 80%;
+}
+
+.icons {
+    width: 25%;
+    height: 100%;
+    margin-left: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons > img {
+    margin-left: 1.5rem;
+    height: 2rem;
+    max-width: 100%;
+    max-height: 60%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.date-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 1rem;
+    width: min(70%, 80rem);
+    height: 15%;
+}
+
+/*TODO
+    get date from calendar ??
+*/
+.date-nav > p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    width: 60%;
+
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 6px 6px #00000029;
+    border: 1px solid #707070;
+    border-radius: 38px;
+    font: normal normal normal 1.8rem/4rem Arial;
+    color: #fefefe;
+}
+
+.date-nav > button {
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 50%;
+    border-radius: 20px;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+    border: solid 1px #808080;
+}
+
+.date-nav > button > img {
+    width: 65%;
+    max-height: 65%;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 2rem;
+    width: 98%;
+    height: 70%;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 13%;
+    height: 85%;
+}
+
+/*TODO
+    Get date from calendar ??
+    Today - different color border ??
+*/
+.header {
+    height: 25%;
+    width: 100%;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000BA 100%) 0% 0% no-repeat padding-box;
+    border: solid 1px #444444;
+    border-radius: 15px 15px 0px 0px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: normal normal bold 1.5rem/2rem Segoe UI;
+    color: #FFFFFF;
+}
+
+.details {
+    width: 100%;
+    height: 75%;
+    background: #BAC00021 0% 0% no-repeat padding-box;
+    border-radius: 0px 0px 15px 15px;
+    border: solid 1px #444444;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+/*TODO
+    text justify center?
+*/
+.details > * {
+    background: #d3da0d4f 0% 0% no-repeat padding-box;;
+    width: 95%;
+    height: 10%;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    border: solid 1px #808080;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-device-width: 650px){
+    section {
+        flex-direction: column;
+    }
+
+    .date-nav { 
+        width: 80%;
+        height: 15%;
+    }
+
+    .date-nav > p {
+        width: 50%;
+    }
+
+    .date-nav > button { 
+        width: 15%;
+    }
+
+    section {
+        margin-top: 0.4rem;
+        height: 80%;
+    }
+
+    .day {
+        flex-direction: row;
+        width: 80%;
+        height: 13%;
+    }
+
+    .header {
+        width: 40%;
+        height: 100%;
+        border-radius: 15px 0 0 15px;
+    }
+
+    .details {
+        width: 60%;
+        height: 100%;
+        border-radius: 0 15px 15px 0;
+    }
+
+    .details > * {
+        height: 20%;
+        width: 90%;
+    }
+}
+
+@media only screen and (max-device-width: 420px) {
+    .bar {
+        justify-content: left;
+        align-items: center;
+    }
+
+    .logo {
+        width: 75%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0em;
+    }
+
+    .logo > img {
+        width: 100%;
+        height: 90%;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        width: 20%;
+        height: 100%;  
+    }
+
+    .menu >  img {
+        width: 50%;
+        height: 30%;
+    }
+
+    .icons, 
+    .pages {
+        display: none;
+    }
+
+    .container {
+        height: 90%;
+        width: 100%;
+        justify-content: start;
+    }
+
+    .date-nav > p {
+        width: 60%;
+        height: 55%;
+        font-size: 3rem;  
+    }
+
+    .date-nav > button {
+        width: 14%;
+        height: 45%;
+    }
+
+    .first {
+        height: 80%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .day {
+        width: 90%;
+        height: 13%;
+        margin-right: 0;
+    }
+
+    .header {
+        width: 100%;
+        border-radius: 15px;
+        font-size: 3rem;
+        line-height: 3rem;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .details {
+        display: none;
+    }
+}
