@@ -36,7 +36,7 @@ body {
     align-items: center;
 }
 
-.pages > button {
+.b {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 19px;
     border: 1px solid #707070;
@@ -46,6 +46,10 @@ body {
     width: 33%;
     font: normal normal bold 0.75rem/1.125rem Segoe UI;
     color: #FF7C00;
+}
+
+.home {
+    background-color: #9c5326e6;
 }
 
 .pages > button > img {
@@ -138,6 +142,7 @@ section > * {
 }
 
 .second {
+    justify-content: center;
     align-items: flex-start;
     width: 50%;
 }
@@ -147,16 +152,13 @@ section > * {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 
     background: #BAC00021 0% 0% no-repeat padding-box;
     width: 45%;
-    height: 28%;
+    height: min(28%, 6rem);
     font: normal normal bold 1.875rem/2.375rem Arial;
     color: #FF7C00;
-}
-
-.action-button > * {
-    margin-left: 2rem;
 }
 
 .action-button > img {
@@ -170,7 +172,7 @@ section > * {
     }
 
     .logo {
-        width: 75%;
+        width: 80%;
         justify-content: center;
         align-items: center;
         margin-left: 0em;
@@ -231,6 +233,10 @@ section > * {
         width: 90%;
         height: 30%;
         margin-right: 0;
+    }
+
+    .second {
+        align-items: center;
     }
 
     .action-button {
