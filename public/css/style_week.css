@@ -40,7 +40,11 @@ body {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 19px;
     border: 1px solid #707070;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
     margin-right: 0.2rem;
     height: 60%;
     width: 33%;
@@ -50,6 +54,10 @@ body {
 
 .week {
     background-color: #9c5326e6;
+}
+
+.week > span {
+    color: #FFFFFF;
 }
 
 .pages > button > img {
