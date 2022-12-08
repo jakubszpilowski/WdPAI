@@ -149,8 +149,8 @@ img {
         z-index: 9999;
         width: 3rem;
         aspect-ratio: 1/1;
-        top: 4rem;
-        right: 4rem;      
+        top: 3rem;
+        right: 3rem;      
         background-color: transparent;
         background-image: url("../img/menu.svg");
         background-repeat: no-repeat;
