@@ -1,98 +1,189 @@
 body {
     margin: 0;
-    
-}
-
-.contents {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    align-items: center; 
-}
-
-.bar {
-    width: 100vw;
-    height: 10%;
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
-
-    display: flex;
-    flex-direction: row;
+    justify-content: start;
     align-items: center;
-    justify-items: left;
+    overflow-x: hidden;
 }
 
-.bar > * + * {
-    margin-left: 70%;
+a {
+    text-decoration: none;
+    width: 80%;
+    height: 80%;
+}
+
+.flex {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.primary-header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+}
+
+.primary-header > div {
+    justify-content: start;
+    align-items: center;
+    height: 10vh;
+    width: 25%;
 }
 
 .logo {
-    width: 25%;
-    height: 100%;
-    max-height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+    margin-left: 1rem;
+    width: 80%;
+    height: 90%;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.mobile-nav-toggle span {
+    display: none;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-bar {
+    width: 50%;
+    height: 10vh;
+    justify-content: end;
     align-items: center;
-    margin-left: 2em;
 }
 
-.logo > img {
-    height: 4.5rem;
-    max-width: 80%;
-}
-
-.icons {
-    width: 25%;
+.settings {
+    width: 30%;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
-.icons > img {
-    margin-left: 1.5rem;
-    height: 2rem;
+img {
     max-width: 100%;
-    max-height: 60%;
+}
+
+.disable {
+    display: none;
+}
+
+span {
+    font: normal normal bold min(100%, 1.4rem) Segoe UI;
+    color: #FF7C00;
 }
 
 .container {
-    width: 90%;
+    width: 80%;
     height: 80%;
-    margin: auto;
 
     background: #FFFFFFF5 0% 0% no-repeat padding-box;
     box-shadow: inset 0px 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 30px;
+
+    margin-top: 3rem;
 }
 
-@media only screen and (max-device-width: 420px) {
-    .bar {
+@media only screen and (max-device-width: 700px){
+    .navigation-bar{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-device-width: 420px){
+    .navigation-bar{
+        position: fixed;
+        inset: 0 0 0 30%;
+        z-index: 1000;
+        height: 100%;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+
+        background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+        border-left: solid 2px #808080;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
     }
 
-    .bar > * + * {
-        margin-left: 0rem;
+    .navigation-bar[data-visible="true"] {
+        transform: translateX(0%);
     }
 
-    .logo {
-        width: 75%;
+    .primary-header div {
         justify-content: center;
-        align-items: center;
-        margin-left: 0em;
     }
 
-    .logo > img {
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        width: 3rem;
+        aspect-ratio: 1/1;
+        top: 4rem;
+        right: 6rem;      
+        background-color: transparent;
+        background-image: url("../img/menu.svg");
+        background-repeat: no-repeat;
+        border: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"]{
+        background-image: url("../img/cross.svg");
+    }
+
+    .navigation-bar > * {
+        flex-direction: column;
+    }
+
+    span {
+        display: contents;
+        font-size: 2rem;
+    }
+
+    .settings {
         width: 100%;
-        height: 90%;
+        height: 50%;
+        justify-content: center;
+        align-items: center;
     }
 
-    .icons > img {
-        height: 3rem;
+    .settings li {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border-radius: 19px;
+        border: 1px solid #000;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 15%;
+        width: 80%;
+    }
+
+    .settings a {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .settings a img {
+        height: 80%;
+        width: 40%;
+    }
+
+    .enable {
+        display: none;
+    }
+
+    .disable{
+        display: block;
     }
 }
