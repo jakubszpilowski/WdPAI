@@ -5,7 +5,7 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0 0 no-repeat padding-box;
 
     display: flex;
     flex-direction: row;
@@ -41,14 +41,25 @@ form {
 
     width: min(80%, 25rem);
     height: min(100%, 100rem);
-    background: #FFFFFFF5 0% 0% no-repeat padding-box;
-    box-shadow: inset 0px 6px 6px #00000029;
+    background: #FFFFFFF5 0 0 no-repeat padding-box;
+    box-shadow: inset 0 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 30px;
 }
 
 .sign {
     font: normal normal bold 1.563rem/2rem Segoe UI;
+}
+
+.error-message {
+    display: flex;
+    justify-content: center;
+
+    color: #EF0000;
+    background: #FF000024;
+    border: 1px solid #EF0000;
+    padding: 0.4em;
+    border-radius: 0.5em;
 }
 
 .reflink {
@@ -77,11 +88,10 @@ form {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border: none;
     margin: 1em;
     line-height: 3rem;
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
-    box-shadow: inset 0px 6px 6px #00000029;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0 0 no-repeat padding-box;
+    box-shadow: inset 0 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 40px;color: white;
 }
@@ -98,8 +108,8 @@ form {
     width: 15%;
     aspect-ratio: 1/1;
     margin: 1em;
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
-    box-shadow: inset 0px 6px 6px #00000029;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0 0 no-repeat padding-box;
+    box-shadow: inset 0 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 50%; 
 }
@@ -108,14 +118,19 @@ form {
     max-height: 80%;
 }
 
+label {
+    width: 80%;
+    justify-content: center;
+}
+
 input {
-    background: #FFFFFFAB 0% 0% no-repeat padding-box;
+    background: #FFFFFFAB 0 0 no-repeat padding-box;
     font: normal normal normal 0.8rem/1.125rem Segoe UI;
     border: 1px solid #707070;
     border-radius: 41px;
     padding: 1em;
     margin: 0.4em;
-    width: 70%;
+    width: 80%;
 }
 
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <script src="/public/scripts/error.js" defer></script>
+    <title>Login page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <form action="login" class="login"  method="POST">
+                <div class="sign">
+                    <p>Sign In</p>
+                </div>
+                <div class="error-message">
+                    <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo "$message";
+                            }
+                        }
+                    ?>
+                </div>
+                <label for="username">
+                    <input name="username" type="text" placeholder="username">
+                </label>
+                <label for="password">
+                    <input name="password" type="password" placeholder="password">
+                </label>
+                <button type="submit" class="btn">
+                    <span>Login</span>
+                </button>
+                <div class="reflink">
+                    <p>Don't have an account? <a href="sign">Sign up!</a> </p>
+                </div>
+            </form>
+        </div>
+        <div class="logo">
+            <img src="/public/img/logo.svg">
+        </div>
+    </div>
+</body>

@@ -11,7 +11,7 @@
         <div class="date flex">
             <span>DATE</span>
         </div>
-        <a href="week_page.html" class="icons">
+        <a href="week_page.php" class="icons">
             <img src="/public/img/cross.svg">
         </a>
         </nav>

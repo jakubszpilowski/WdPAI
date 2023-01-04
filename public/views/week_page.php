@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login">
+                    <a href="start">
                         <img src="/public/img/logout.svg" class="enable">
                         <img src="/public/img/logout_org.svg" class="disable">
                         <span class="disable">Log out</span>
