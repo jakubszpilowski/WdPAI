@@ -17,7 +17,7 @@ class Note {
         return $this->title;
     }
 
-    public function setTitle($title) {
+    public function setTitle(string $title) {
         $this->title = $title;
     }
 
@@ -25,7 +25,7 @@ class Note {
         return $this->content;
     }
 
-    public function setContent($content) {
+    public function setContent(string $content) {
         $this->content = $content;
     }
 }
