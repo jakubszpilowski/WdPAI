@@ -55,14 +55,12 @@ form {
     display: flex;
     justify-content: center;
     width: 60%;
-    color: #EF0000;
-    background: #FF000024;
-    border: 1px solid #EF0000;
-    border-radius: 30px;
+    background: transparent;
 }
 
 .error-text {
     font-size: 1.2rem;
+    color: red;
 }
 
 .reflink {
