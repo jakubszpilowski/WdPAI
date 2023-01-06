@@ -15,7 +15,7 @@
                     <?php
                         if(isset($messages)){
                             foreach ($messages as $message){
-                                echo "$message";
+                                echo '<span class="error-text">' . $message . '</span>';
                             }
                         }
                     ?>

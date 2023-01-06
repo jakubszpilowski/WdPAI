@@ -54,12 +54,15 @@ form {
 .error-message {
     display: flex;
     justify-content: center;
-
+    width: 60%;
     color: #EF0000;
     background: #FF000024;
     border: 1px solid #EF0000;
-    padding: 0.4em;
-    border-radius: 0.5em;
+    border-radius: 30px;
+}
+
+.error-text {
+    font-size: 1.2rem;
 }
 
 .reflink {
