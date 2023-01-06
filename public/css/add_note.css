@@ -43,19 +43,44 @@
 }
 
 .add-text {
-    font-size: 1.5rem;
+    font-size: 120%;
     color: white;
     margin-left: 1rem;
 }
 
-.title {
-    height: 10%;
-    margin-top: 0.5rem;
+.title-date {
     width: 80%;
+    height: 16%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+}
+
+.title-date > * {
+    height: 50%;
+}
+
+.title-date > label > input {
+    height: 90%;
+}
+
+.title {
+    width: 70%;
+}
+
+.title > input {
+    width: 100%;
+}
+
+.date-input {
+    width: 25%;
+}
+
+.date > input {
+    width: 50%;
 }
 
 .form-container label > input, textarea {
-    width: 100%;
     border-radius: 10px;
 }
 
@@ -66,16 +91,21 @@
 
 .form-container label > textarea {
     height: 100%;
+    width: 100%;
 }
 
-.form-container label > input {
-    height: 100%;
+.submit-btn-div {
+    width: 80%;
+    height: 16%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .btn {
     width: 2rem;
     aspect-ratio: 1;
-    margin-bottom: 1rem;
     background-color: transparent;
     background-image: url("../img/add.svg");
     background-repeat: no-repeat;
@@ -84,7 +114,84 @@
 }
 
 @media only screen and (max-device-width: 700px){
+    .form-popup {
+        width: 60%;
+    }
+
     .add-text {
         display: block;
+        font-size: 2rem;
+    }
+
+    .exit-btn {
+        width: 2rem;
+        margin-right: 1.5rem;
+    }
+
+    input, textarea {
+        font-size: 1.2rem;
+    }
+
+    .title-date {
+        height: 18%;
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-date >  * {
+        height: 45%;
+    }
+
+    .date-input {
+        width: 50%;
+    }
+
+    .date-input > input {
+        width: 80%;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .text-area {
+        width: 90%;
+    }
+
+    .btn {
+        width: 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-device-width: 420px){
+    .form-popup {
+        width: 90%;
+    }
+
+    .add-text {
+        font-size: 2.5rem;
+    }
+
+    .exit-btn {
+        margin-right: 2rem;
+        width: 3rem;
+    }
+
+    .title-date > * {
+        height: 40%;
+    }
+
+    input, textarea {
+        font-size: 2rem;
+    }
+
+    .submit-btn-div {
+        justify-content: center;
+    }
+
+    .btn {
+        width: 4rem;
     }
 }
