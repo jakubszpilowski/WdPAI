@@ -7,12 +7,14 @@ $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('start', 'DefaultController');
 Routing::get('sign', 'DefaultController');
-Routing::get('home', 'DefaultController');
+Routing::get('home', 'NoteController');
 Routing::get('week', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('admin', 'DefaultController');
 Routing::get('all', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
+Routing::post('register', 'SecurityController');
+Routing::post('logout', 'SecurityController');
 
 Routing::run($path);

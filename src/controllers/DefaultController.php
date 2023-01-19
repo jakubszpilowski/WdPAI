@@ -12,9 +12,7 @@ class DefaultController extends AppController{
         $this->render('sign_up');
     }
 
-    public function home(){
-        $this->render('main_page');
-    }
+
 
     public function week(){
         $this->render('week_page');

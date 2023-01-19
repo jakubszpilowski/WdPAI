@@ -22,12 +22,57 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User does not exist!']]);
         }
 
-        if($user->getPassword() !== $password){
+        if(!password_verify($password, $user->getPassword())){
             return $this->render('login', ['messages' => ['Invalid password!']]);
         }
 
-        //return $this->render('main_page');
+        $cookie = 'user';
+        $cookie_value = $username;
+        setcookie($cookie, $cookie_value, time() + (60 * 20), '/');
+
+        session_start();
+
+        $_SESSION['id_user'] = $user->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
+    }
+
+    public function register(){
+        $userRepository = new UserRepository();
+
+        if(!$this->isPost()) {
+            return $this->render('sign_up');
+        }
+
+        $username = $_POST['username'];
+        if($userRepository->usernameTaken($username)) {
+            return $this->render('sign_up', ['messages' => ['Username already taken']]);
+        }
+
+        $email = $_POST['email'];
+        if($userRepository->emailTaken($email)){
+            return $this->render('sign_up', ['messages' => ['Email already taken']]);
+        }
+
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $user = new User($username, $password, $email, 2);
+
+        $userRepository->registerUser($user);
+
+        $registeredUser = $userRepository->getUserByUsername($username);
+        $cookie = 'user';
+        $cookie_value = $registeredUser->getEmail();
+        setcookie($cookie, $cookie_value, time() + (60 *  20), "/");
+
+        session_start();
+        $_SESSION['id_user'] = $registeredUser->getId();
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/home");
+    }
+
+    public function logout(){
+        setcookie('user', $_COOKIE['user'], time() - 10, "/");
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/start");
     }
 }

@@ -2,12 +2,13 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style.css">
     <script src="/public/scripts/error.js" defer></script>
+    <script src="/public/scripts/register.js" defer></script>
     <title>Register page</title>
 </head>
 <body>
     <div class="container">
         <div class="login-container">
-            <form>
+            <form action="register" method="POST" onsubmit="return isFormValid();">
                 <div class="sign">
                     <p>Sign Up</p>
                 </div>
@@ -33,7 +34,7 @@
                     <a href="start" class="back-btn">
                         <img src="/public/img/arrow.svg">
                     </a>
-                    <button class="btn">
+                    <button type="submit" class="btn">
                         <span>Register</span>
                     </button>
                 </div>

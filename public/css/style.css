@@ -134,6 +134,10 @@ input {
     width: 80%;
 }
 
+.no-valid {
+    border: 3px solid red;
+    outline: none;
+}
 
 @media only screen and (max-device-width: 420px) {
     .container {
