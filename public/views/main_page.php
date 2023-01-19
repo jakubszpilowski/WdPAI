@@ -61,17 +61,14 @@
         
     <div class="container">
         <p>Latest notes</p>
-         <section class="first">
+        <?php foreach ($notes as $note): ?>
+        <section class="first">
             <div class="note">
-                    
-            </div>
-            <div class="note">
-                    
-            </div>
-            <div class="note">
-                    
+                <h1><?=$note->getTitle()?></h1>
+                <h2><?=$note->getDate()?></h2>
             </div>
         </section>
+        <?php endforeach; ?>
         <section class="second">
             <a href="all" class="action-button">
                 <strong>ALL</strong>
