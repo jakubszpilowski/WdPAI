@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <div class="login-container">
-            <form action="register" method="POST" onsubmit="return isFormValid();">
+            <form action="register" method="POST">
                 <div class="sign">
                     <p>Sign Up</p>
                 </div>
@@ -21,15 +21,22 @@
                         }
                     ?>
                 </div>
-                <label for="username">
-                    <input name="username" type="text" placeholder="username">
-                </label>
-                <label for="email">
-                    <input name="email" type="email" placeholder="email">
-                </label>
-                <label for="password">
-                    <input name="password" type="password" placeholder="password">
-                </label>
+                <div class="input-control">
+                    <label for="username"> </label>
+                    <input id="username" name="username" type="text" placeholder="username">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="email"></label>
+                    <input id="email" name="email" type="email" placeholder="email">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="password"></label>
+                    <input id="password" name="password" type="password" placeholder="password">
+                    <div class="error"></div>
+                </div>
+
                 <div class="register-button">
                     <a href="start" class="back-btn">
                         <img src="/public/img/arrow.svg">

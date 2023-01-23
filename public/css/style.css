@@ -59,7 +59,7 @@ form {
 }
 
 .error-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: red;
 }
 
@@ -134,8 +134,32 @@ input {
     width: 80%;
 }
 
+.input-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-control.success input{
+    border: 2px solid green;
+}
+
+.input-control.error input {
+    border: 2px  solid red;
+}
+
+.input-control .error {
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+    font-weight: bold;
+    height: 1rem;
+}
+
 .no-valid {
-    border: 3px solid red;
+    border: 2px solid red;
     outline: none;
 }
 
@@ -176,5 +200,10 @@ input {
 
     .register-button {
         flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+
+    .btn {
+        margin: 1rem 0 0 0;
     }
 }
