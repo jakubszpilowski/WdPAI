@@ -26,11 +26,8 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Invalid password!']]);
         }
 
-        $cookie = 'user';
-        $cookie_value = $username;
-        setcookie($cookie, $cookie_value, time() + (60 * 20), '/');
-
-        session_start();
+        $this->setCookie($username);
+        $this->startSession($user);
 
         $_SESSION['id_user'] = $user->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
@@ -60,12 +57,9 @@ class SecurityController extends AppController
         $userRepository->registerUser($user);
 
         $registeredUser = $userRepository->getUserByUsername($username);
-        $cookie = 'user';
-        $cookie_value = $registeredUser->getEmail();
-        setcookie($cookie, $cookie_value, time() + (60 *  20), "/");
+        $this->setCookie($registeredUser->getUsername());
+        $this->startSession($registeredUser);
 
-        session_start();
-        $_SESSION['id_user'] = $registeredUser->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
     }
@@ -74,5 +68,16 @@ class SecurityController extends AppController
         setcookie('user', $_COOKIE['user'], time() - 10, "/");
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/start");
+    }
+
+    private function setCookie(string $username): void {
+        $cookie = 'user';
+        $cookie_value = $username;
+        setcookie($cookie, $cookie_value, time() + (60 * 20), "/");
+    }
+
+    private function startSession(?User $user): void {
+        session_start();
+        $_SESSION['id_user'] = $user->getId();
     }
 }
