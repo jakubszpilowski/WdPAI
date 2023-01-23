@@ -20,12 +20,14 @@
                         }
                     ?>
                 </div>
-                <label for="username">
-                    <input name="username" type="text" placeholder="username">
-                </label>
-                <label for="password">
-                    <input name="password" type="password" placeholder="password">
-                </label>
+                <div class="input-control">
+                    <label for="username"></label>
+                    <input id="username" name="username" type="text" placeholder="username">
+                </div>
+                <div class="input-control">
+                    <label for="password"></label>
+                    <input id="password" name="password" type="password" placeholder="password">
+                </div>
                 <button type="submit" class="btn">
                     <span>Login</span>
                 </button>
