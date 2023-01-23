@@ -49,11 +49,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="start">
-                        <img src="/public/img/logout.svg" class="enable">
-                        <img src="/public/img/logout_org.svg" class="disable">
-                        <span class="disable">Log out</span>
-                    </a>
+                    <form class="logout-form" action="logout" method="POST">
+                        <button>
+                            <span class="disable">Log out</span>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </nav>
