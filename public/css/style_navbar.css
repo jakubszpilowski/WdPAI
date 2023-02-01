@@ -124,14 +124,6 @@ img {
     max-width: 100%;
 }
 
-.active {
-    background-color: #9c5326e6;
-}
-
-.active span {
-    color: #FFFFFF;
-}
-
 .disable {
     display: none;
 }

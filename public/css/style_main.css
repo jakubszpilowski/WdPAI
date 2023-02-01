@@ -9,6 +9,18 @@ body {
     overflow-x: hidden;
 }
 
+#home-page {
+    background-color: #9c5326e6;
+}
+
+#home-page span {
+    color: #FFFFFF;
+}
+
+.home-off, .week-on, .all-on {
+    display: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -85,6 +97,12 @@ section > * {
 
 .action-button > img {
     height: 30%;
+}
+
+@media only screen and (max-device-width:  700px) {
+    .container > p {
+        width: 75%;
+    }
 }
 
 @media only screen and (max-device-width: 420px) {

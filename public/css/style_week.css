@@ -9,6 +9,18 @@ body {
     overflow-x: hidden;
 }
 
+#week-page {
+    background-color: #9c5326e6;
+}
+
+#week-page span {
+    color: #FFFFFF;
+}
+
+.home-on, .week-off, .all-on {
+    display: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;

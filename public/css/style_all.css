@@ -8,3 +8,15 @@ body {
     align-items: center;
     overflow-x: hidden;
 }
+
+#all-page {
+    background-color: #9c5326e6;
+}
+
+#all-page span {
+    color: #FFFFFF;
+}
+
+.home-on, .week-on, .all-off {
+    display: none;
+}
