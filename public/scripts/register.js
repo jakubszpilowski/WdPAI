@@ -7,9 +7,10 @@ function isEmail(email){
     return /\S+@\S+\.\S+/.test(email);
 }
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    validateInput();
+form.addEventListener('submit', (e) => {
+    if(!validateInput()){
+        e.preventDefault();
+    }
 });
 
 const setError = (element, message) => {
@@ -32,29 +33,43 @@ const setSuccess = element => {
     inputControl.classList.remove('error');
 }
 
-const validateInput = () => {
+const validateUsername = () => {
     const username = usernameInput.value;
 
     if (username.length < 3) {
         setError(usernameInput, 'Username is too short');
+        return false;
     } else {
         setSuccess(usernameInput);
+        return true;
     }
+};
 
+const checkEmail = () => {
     if(emailInput.value === ""){
         setError(emailInput, 'Email is required');
+        return false;
     } else {
         setSuccess(emailInput);
+        return true;
     }
+};
 
+
+const checkPassword = () => {
     const message = isPasswordValid(passwordInput.value);
 
     if(message === ""){
         setSuccess(passwordInput);
+        return true;
     } else {
         setError(passwordInput, message);
+        return false;
     }
+};
 
+const validateInput = () => {
+    return validateUsername() && checkEmail() && checkPassword();
 };
 
 function markValidation(element, condition){

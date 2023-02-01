@@ -16,24 +16,24 @@
                     <?php
                         if(isset($messages)){
                             foreach ($messages as $message) {
-                                echo "$message";
+                                echo '<span class="error-text">' . $message . '</span>';
                             }
                         }
                     ?>
                 </div>
                 <div class="input-control">
                     <label for="username"> </label>
-                    <input id="username" name="username" type="text" placeholder="username">
+                    <input id="username" name="username" type="text" placeholder="username" onfocusout="validateUsername()">
                     <div class="error"></div>
                 </div>
                 <div class="input-control">
                     <label for="email"></label>
-                    <input id="email" name="email" type="email" placeholder="email">
+                    <input id="email" name="email" type="email" placeholder="email" onfocusout="checkEmail()">
                     <div class="error"></div>
                 </div>
                 <div class="input-control">
                     <label for="password"></label>
-                    <input id="password" name="password" type="password" placeholder="password">
+                    <input id="password" name="password" type="password" placeholder="password" onfocusout="checkPassword()">
                     <div class="error"></div>
                 </div>
 
