@@ -29,7 +29,6 @@ class SecurityController extends AppController
         $this->setCookie($username);
         $this->startSession($user);
 
-        $_SESSION['id_user'] = $user->getId();
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/home");
     }
