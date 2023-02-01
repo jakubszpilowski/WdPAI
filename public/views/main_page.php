@@ -1,7 +1,7 @@
 <?php
 if(!isset($_COOKIE['user'])) {
     $url = "http://$_SERVER[HTTP_HOST]";
-    header("Location: ${url}/index");
+    header("Location: ${url}/start");
 } else {
     setcookie('user', $_COOKIE['user'], time() + (60 * 20), "/");
 }
