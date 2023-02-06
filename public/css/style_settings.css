@@ -61,10 +61,6 @@ a {
     align-items: center;
 }
 
-.settings img {
-    height: 100%;
-}
-
 .settings {
     width: 30%;
     height: 100%;
@@ -79,10 +75,20 @@ a {
     justify-content: center;
     align-items: center;
     height: 50%;
-    width: 45%;
+    width: 30%;
 }
 
-.logout-form {
+.back-btn {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    background-image: url("../img/cross.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+}
+
+.logout-form, .back {
     height: 80%;
     width: 80%;
 }
@@ -95,10 +101,6 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     border: 0;
-}
-
-img {
-    max-width: 100%;
 }
 
 .disable {
@@ -280,18 +282,6 @@ span {
         width: 80%;
     }
 
-    .settings a {
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-    }
-
-    .settings a img {
-        height: 80%;
-        width: 40%;
-    }
-
     .enable {
         display: none;
     }
@@ -304,11 +294,15 @@ span {
          gap: 0.5rem;
      }
 
+    .back-btn {
+        background-image: url("../img/cross_org.svg");
+    }
+
     .logout-form button {
         background-image: url("../img/logout_org.svg");
     }
 
-    .logout-form {
+    .logout-form, .back {
         width: 60%;
         height: 66%;
     }

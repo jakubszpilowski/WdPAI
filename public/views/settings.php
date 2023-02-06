@@ -29,11 +29,11 @@ if(!isset($_COOKIE['user'])) {
         <nav id="navigation-bar" data-visible="false" class="navigation-bar flex">
             <ul class="settings list flex">
                 <li>
-                    <a href="#">
-                        <img src="/public/img/cross.svg" class="enable">
-                        <img src="/public/img/cross_org.svg" class="disable">
-                        <span class="disable">Exit</span>
-                    </a>
+                    <div class="back">
+                        <button class="back-btn" onclick="history.back()">
+                            <span class="disable">Exit</span>
+                        </button>
+                    </div>
                 </li>
                 <li>
                     <form class="logout-form" action="logout" method="POST">
