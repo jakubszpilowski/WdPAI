@@ -35,11 +35,10 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 1.2rem;
-    margin-bottom: 0;
+    margin: 1.2rem 1.2rem 0;
 
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
-    box-shadow: inset 0px 6px 6px #00000029;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0 0 no-repeat padding-box;
+    box-shadow: inset 0 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 38px;
     width: 45%;
@@ -66,7 +65,7 @@ section > * {
 }
 
 .note {
-    background: #BAC00021 0% 0% no-repeat padding-box;
+    background: #BAC00021 0 0 no-repeat padding-box;
     width: 30%;
     height: 85%;
     display: flex;
@@ -88,7 +87,7 @@ section > * {
     align-items: center;
     gap: 1rem;
 
-    background: #BAC00021 0% 0% no-repeat padding-box;
+    background: #BAC00021 0 0 no-repeat padding-box;
     width: 45%;
     height: min(28%, 6rem);
     font: normal normal bold 1.875rem/2.375rem Arial;
