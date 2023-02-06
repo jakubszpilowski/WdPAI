@@ -26,7 +26,4 @@ class DefaultController extends AppController{
         $this->render('settings');
     }
 
-    public function admin(){
-        $this->render('admin');
-    }
 }

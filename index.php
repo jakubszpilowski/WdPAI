@@ -10,11 +10,11 @@ Routing::get('sign', 'DefaultController');
 Routing::get('home', 'NoteController');
 Routing::get('week', 'DefaultController');
 Routing::get('settings', 'DefaultController');
-Routing::get('admin', 'DefaultController');
 Routing::get('all', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('logout', 'SecurityController');
+Routing::get('admin', 'SecurityController');
 
 Routing::run($path);

@@ -84,4 +84,51 @@ class UserRepository extends Repository
             $user->getRole()
         ]);
     }
+
+    public function getAllUsers(): ?array {
+        $stmt = $this->database->connect()->prepare('
+            SELECT u.username, 
+                   u.password, 
+                   u.email, 
+                   r.role 
+            FROM database.public.users u 
+            INNER JOIN database.public.roles r 
+                ON r.id_role = u.id_role;
+        ');
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!$users) {
+            return null;
+        }
+
+        $users_list = [];
+        foreach ($users as $user) {
+            $users_list[] = new User(
+                $user['username'],
+                $user['password'],
+                $user['email'],
+                $user['role'],
+                $user['id_user']
+            );
+        }
+
+        return $users_list;
+    }
+
+    public function isAdmin($id_user): bool {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM database.public.admins WHERE id_user = :id_user
+        ');
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if(!$result){
+            return false;
+        }
+
+        return true;
+    }
 }

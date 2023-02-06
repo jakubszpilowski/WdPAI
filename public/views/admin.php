@@ -29,13 +29,6 @@ if(!isset($_COOKIE['user'])) {
         <nav id="navigation-bar" data-visible="false" class="navigation-bar flex">
             <ul class="settings list flex">
                 <li>
-                    <a href="settings">
-                        <img src="/public/img/profile.svg" class="enable">
-                        <img src="/public/img/profile_org.svg" class="disable">
-                        <span class="disable">Settings</span>
-                    </a>
-                </li>
-                <li>
                     <form class="logout-form" action="logout" method="POST">
                         <button>
                             <span class="disable">Log out</span>
@@ -45,7 +38,28 @@ if(!isset($_COOKIE['user'])) {
             </ul>
         </nav>
     </header>
-    <div class="container">
-
+    <div class="container flex">
+        <table>
+            <tr class="header">
+                <th>username</th>
+                <th>password</th>
+                <th>email</th>
+                <th>role</th>
+                <th>action</th>
+            </tr>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?= $user->getUsername(); ?></td>
+                    <td><?= $user->getPassword(); ?></td>
+                    <td><?= $user->getEmail(); ?></td>
+                    <td><?= $user->getRole(); ?></td>
+                    <td>
+                        <?php if($user->getRole() == 'user') : ?>
+                            <button class="delete-user"></button>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div> 
 </body>

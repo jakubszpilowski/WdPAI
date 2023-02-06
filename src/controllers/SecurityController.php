@@ -69,6 +69,24 @@ class SecurityController extends AppController
         header("Location: {$url}/start");
     }
 
+    public function admin(){
+        session_start();
+        if(!isset($_SESSION['id_user'])) {
+            return $this->render('login', ['messages' => ['Log in to see this page']]);
+        }
+
+        $userRepository = new UserRepository();
+        session_start();
+        $id_user = $_SESSION['id_user'];
+
+        if(!$userRepository->isAdmin($id_user)) {
+            return $this->render('login', ['messages' => ['You are not an admin!']]);
+        }
+
+        $users = $userRepository->getAllUsers();
+        return $this->render('admin', ['users' => $users]);
+    }
+
     private function setCookie(string $username): void {
         $cookie = 'user';
         $cookie_value = $username;
