@@ -13,3 +13,11 @@ navToggle.addEventListener('click', () => {
     }
 });
 
+window.onscroll = function() {
+    const header = document.getElementById('nav-bar');
+    if (window.pageYOffset > 80) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+};

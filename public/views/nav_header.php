@@ -1,4 +1,4 @@
-<header class="primary-header flex">
+<header id="nav-bar" class="primary-header flex">
         <div class="flex">
             <img src="/public/img/logo.svg" class="logo">
         </div>
