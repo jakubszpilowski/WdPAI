@@ -6,13 +6,13 @@ class Note {
     private $id;
     private $title;
     private $details;
-    private $date;
+    private $dat;
     private $id_user;
 
-    public function __construct(string $title, string $details, Date $date, int $id_user, $id = null){
+    public function __construct(string $title, string $details, string $dat, int $id_user, $id = null){
         $this->title = $title;
         $this->details = $details;
-        $this->date = $date;
+        $this->dat = $dat;
         $this->id_user = $id_user;
         $this->id = $id;
     }
@@ -43,14 +43,14 @@ class Note {
         $this->id = $id;
     }
 
-    public function getDate(): Date
+    public function getDate(): string
     {
-        return $this->date;
+        return $this->dat;
     }
 
-    public function setDate(Date $date): void
+    public function setDate(string $dat): void
     {
-        $this->date = $date;
+        $this->dat = $dat;
     }
 
     public function getIdUser(): int
