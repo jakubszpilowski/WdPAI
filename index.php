@@ -10,8 +10,10 @@ Routing::get('sign', 'DefaultController');
 Routing::get('home', 'NoteController');
 Routing::get('week', 'DefaultController');
 Routing::get('settings', 'DefaultController');
-Routing::get('all', 'DefaultController');
+Routing::get('all', 'NoteController');
 
+Routing::post('add_note','NoteController');
+Routing::post('delete_note', 'NoteController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('logout', 'SecurityController');
