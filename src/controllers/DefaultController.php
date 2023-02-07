@@ -12,14 +12,8 @@ class DefaultController extends AppController{
         $this->render('sign_up');
     }
 
-
-
     public function week(){
         $this->render('week_page');
-    }
-
-    public function all(){
-        $this->render('all_notes');
     }
 
     public function settings(){
