@@ -40,13 +40,40 @@ class NoteController extends AppController {
         $title = $_POST['title'];
         $details = $_POST['details'];
 
-        $userRepository = new UserRepository();
-
         $note = new Note($title, $details, $dat, $_SESSION['id_user']);
 
         $this->noteRepository->addNote($note);
 
         $this->render('main_page', ['notes' => $this->noteRepository->getLastNotes(), 'messages' => ['Note added successfully']]);
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function add_note_in_all(){
+        if(!$this->isPost()) {
+            return $this->render('all_notes', ['notes' => $this->noteRepository->getAllNotes()]);
+        }
+
+        $date = new DateTime($_POST['date']);
+        if($date < new DateTime()) {
+            return $this->render(
+                'all_notes',
+                ['notes' => $this->noteRepository->getAllNotes(),
+                    'messages' => ['You can\'t make note in past'],
+                    'flag' => true]
+            );
+        }
+
+        $dat = $_POST['date'];
+        $title = $_POST['title'];
+        $details = $_POST['details'];
+
+        $note = new Note($title, $details, $dat, $_SESSION['id_user']);
+
+        $this->noteRepository->addNote($note);
+
+        $this->render('all_notes', ['notes' => $this->noteRepository->getAllNotes(), 'messages' => ['Note added successfully']]);
     }
 
     public function delete_note(int $id){

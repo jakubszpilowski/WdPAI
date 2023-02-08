@@ -12,6 +12,7 @@ Routing::get('week', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::get('all', 'NoteController');
 
+Routing::post('add_note_in_all', 'NoteController');
 Routing::post('add_note','NoteController');
 Routing::post('delete_note', 'NoteController');
 Routing::post('login', 'SecurityController');
