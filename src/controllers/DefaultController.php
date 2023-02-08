@@ -16,8 +16,4 @@ class DefaultController extends AppController{
         $this->render('week_page');
     }
 
-    public function settings(){
-        $this->render('settings');
-    }
-
 }

@@ -131,4 +131,30 @@ class UserRepository extends Repository
 
         return true;
     }
+
+    public function getUserById(int $id_user): User {
+        $stmt = $this->database->connect()->prepare('
+            SELECT u.username as username, 
+                   u.password as password, 
+                   u.email as email, 
+                   r.role as role,
+                   u.id_user as id_user
+            FROM database.public.users u 
+            INNER JOIN database.public.roles r 
+                ON r.id_role = u.id_role
+            WHERE id_user = :id_user;
+        ');
+
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return new User(
+            $user['username'],
+            $user['password'],
+            $user['email'],
+            $user['role'],
+            $user['id_user']
+        );
+    }
 }

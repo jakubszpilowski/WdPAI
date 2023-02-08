@@ -9,7 +9,7 @@ Routing::get('start', 'DefaultController');
 Routing::get('sign', 'DefaultController');
 Routing::get('home', 'NoteController');
 Routing::get('week', 'DefaultController');
-Routing::get('settings', 'DefaultController');
+Routing::get('settings', 'UserController');
 Routing::get('all', 'NoteController');
 
 Routing::post('add_note_in_all', 'NoteController');

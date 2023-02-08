@@ -49,7 +49,9 @@ if(!isset($_COOKIE['user'])) {
         <ul class="list contents flex">
             <li class="info flex">
                 <span class="user flex">
-                    Username
+                    <?php if (isset($user)){?>
+                    <?= $user->getUsername()?>
+                    <?php }?>
                 </span>
                 <button class="edit-btn">
                     Edit
@@ -57,7 +59,9 @@ if(!isset($_COOKIE['user'])) {
             </li>
             <li class="info flex">
                 <span class="user flex">
-                    e-mail
+                    <?php if (isset($user)){?>
+                    <?= $user->getEmail()?>
+                    <?php }?>
                 </span>
                 <button class="edit-btn">
                     Edit
@@ -65,7 +69,7 @@ if(!isset($_COOKIE['user'])) {
             </li>
             <li class="info flex">
                 <span class="user flex">
-                    Password
+                    ************
                 </span>
                 <button class="edit-btn">
                     Edit
