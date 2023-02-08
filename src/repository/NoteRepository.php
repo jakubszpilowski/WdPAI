@@ -39,7 +39,7 @@ class NoteRepository extends Repository
         return $result;
     }
 
-    public function getLastNotes(): array {
+    public function getLastNotes(): ?array {
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
@@ -57,6 +57,10 @@ class NoteRepository extends Repository
         $stmt->bindParam(':id_user', $_SESSION['id_user'], PDO::PARAM_INT);
         $stmt->execute();
         $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!$notes) {
+            return null;
+        }
 
         foreach ($notes as $note) {
             $result[] = new Note(

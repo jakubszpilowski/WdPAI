@@ -24,6 +24,7 @@ if(!isset($_COOKIE['user'])) {
         <p>Latest notes</p>
         <?php include('messages_div.php') ?>
         <section class="first">
+            <?php if(isset($notes)) {?>
             <?php foreach ($notes as $note): ?>
                 <div class="note">
                     <div id=<?=$note->getId(); ?> class="delete">
@@ -32,7 +33,7 @@ if(!isset($_COOKIE['user'])) {
                     <h1><?=$note->getTitle()?></h1>
                     <h2><?=$note->getDate()?></h2>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach; } ?>
         </section>
         <section class="second">
             <a href="all" class="action-button">

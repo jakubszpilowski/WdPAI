@@ -22,6 +22,7 @@ if(!isset($_COOKIE['user'])) {
     <?php include('nav_header.php') ?>
     <?php include('messages_div.php') ?>
     <div class="container flex">
+        <?php if(isset($notes)) {?>
         <?php foreach ($notes as $note): ?>
                 <div class="note">
                     <div class="content flex">
@@ -33,7 +34,7 @@ if(!isset($_COOKIE['user'])) {
                         <button id="delete-btn" class="delete-btn"></button>
                     </div>
                 </div>
-            <?php endforeach; ?>
+        <?php endforeach; }?>
     </div>
     <div class="button-container">
         <button class="add-button" onclick="openAdd()">+</button>
