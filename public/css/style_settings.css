@@ -114,31 +114,31 @@ span {
 
 .container {
     width: 80%;
-    height: 70%;
+    height: 85%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #FFFFFFF5 0 0 no-repeat padding-box;
     box-shadow: inset 0 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 30px;
 
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .contents {
-    margin-top: 3rem;
-    margin-left: 3rem;
-    height: 75%;
+    height: 95%;
     width: 80%;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: flex-start;
 }
 
 .user {
     width: 75%;
     background: #FFFFFF 0 0 no-repeat padding-box;
-    border: 1px solid #707070;
-    border-radius: 49px;
+    border-bottom: solid 1px #808080;
     justify-content: center;
     align-items: center;
     font: normal normal bold 1.5rem/2.5rem Segoe UI;
@@ -149,47 +149,94 @@ span {
 
 .info {
     width: 100%;
-    height: 15%;
+    height: 20%;
     flex-direction: row;
-    justify-content: space-between;
-    
-}
-
-.edit-btn {
-    width: 15%;
-    background: transparent 0 0 no-repeat padding-box;
-    text-align: center;
-    font: normal normal bold 1.2rem/2rem Segoe UI;
-    letter-spacing: 0;
-    color: #FF7C00;
-    opacity: 0.6;
-    border: none;
-    outline: none;
+    justify-content: center;
 }
 
 .ctn {
-    width: 90%;
-    height: 10%;
-    justify-content: end;
+    width: 15%;
+    height: 80%;
+    justify-content: center;
     align-items: center;
 }
 
 .apply-btn {
-    width: 30%;
     height: 100%;
+    aspect-ratio: 1;
     justify-content: center;
     align-items: center;
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0 0 no-repeat padding-box;
-    border: 1px solid #000;
-    border-radius: 49px;
-
+    border: none;
+    background-color: transparent;
     font: normal normal bold 1.2rem/2rem Segoe UI;
-    color: #FFF;
+    color: #FF7C00;
+    opacity: 0.8;
+}
+
+.apply-btn:hover{
+    text-decoration: underline;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px #808080;
+    font: normal normal normal 1.2rem/2rem Segoe UI;
+    text-align: center;
+}
+
+#edit-user, #edit-email, #edit-password {
+    display: none;
+}
+
+.off {
+    display: none;
+}
+
+.repeat {
+    width: 75%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.twice {
+    width: 100%;
 }
 
 @media only screen and (max-device-width: 700px){
     .navigation-bar{
         width: 70%;
+    }
+
+    .info {
+        height: 25%;
+    }
+
+    .repeat {
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .apply-btn {
+         width: 50%;
+         font-size: 2rem;
+    }
+
+    .user {
+        font-size: 2rem;
+    }
+
+    input {
+        font-size: 1.5rem;
     }
 }
 
@@ -244,8 +291,6 @@ span {
     }
 
     .contents {
-        margin-top: 5rem;
-        margin-left: 5rem;
         gap: 2rem;
     }
 
@@ -253,14 +298,9 @@ span {
         font-size: 3rem;
     }
     
-    .edit-btn {
-        width: 20%;
-        font-size: 2rem;
-    }
-
     .apply-btn {
         width: 50%;
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .settings {
@@ -305,5 +345,21 @@ span {
     .logout-form, .back {
         width: 60%;
         height: 66%;
+    }
+
+    .input-control {
+        height: 100%;
+    }
+
+    input {
+        font-size: 2rem;
+    }
+
+    .ctn {
+        width: 20%;
+    }
+
+    .apply-btn {
+        width: 75%;
     }
 }

@@ -12,6 +12,7 @@ if(!isset($_COOKIE['user'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style_settings.css">
     <script src="/public/scripts/nav.js" defer></script>
+    <script src="/public/scripts/settings_handler.js" defer></script>
     <title>Settings</title>
 </head>
 <body>
@@ -46,6 +47,7 @@ if(!isset($_COOKIE['user'])) {
         </nav>
     </header>
     <div class="container">
+        <?php include('messages_div.php') ?>
         <ul class="list contents flex">
             <li class="info flex">
                 <span class="user flex">
@@ -53,9 +55,25 @@ if(!isset($_COOKIE['user'])) {
                     <?= $user->getUsername()?>
                     <?php }?>
                 </span>
-                <button class="edit-btn">
-                    Edit
-                </button>
+                <div class="ctn flex">
+                    <button id="edit-username" class="apply-btn flex" onclick="editUsername()">
+                        Edit
+                    </button>
+                    <button id="cancel-username" class="apply-btn flex off" onclick="closeUsername()">
+                        Cancel
+                    </button>
+                </div>
+            </li>
+            <li id="edit-user" class="info flex">
+                <div class="input-control">
+                    <label for="username"></label>
+                    <input id="username" type="text" placeholder="enter new username">
+                </div>
+                <div class="ctn flex">
+                    <button class="apply-btn flex">
+                        Apply
+                    </button>
+                </div>
             </li>
             <li class="info flex">
                 <span class="user flex">
@@ -63,23 +81,62 @@ if(!isset($_COOKIE['user'])) {
                     <?= $user->getEmail()?>
                     <?php }?>
                 </span>
-                <button class="edit-btn">
-                    Edit
-                </button>
+                <div class="ctn flex">
+                    <button id="edit-e" class="apply-btn flex" onclick="editEmail()">
+                        Edit
+                    </button>
+                    <button id="cancel-e" class="apply-btn flex off" onclick="closeEmail()">
+                        Cancel
+                    </button>
+                </div>
+            </li>
+            <li id="edit-email" class="info flex">
+                <div class="repeat flex">
+                    <div class="input-control twice">
+                        <label for="email"></label>
+                        <input id="email" type="email" placeholder="enter new email">
+                    </div>
+                    <div class="input-control twice">
+                        <label for="email"></label>
+                        <input id="email" type="email" placeholder="repeat email">
+                    </div>
+                </div>
+                <div class="ctn flex">
+                    <button class="apply-btn flex">
+                        Apply
+                    </button>
+                </div>
             </li>
             <li class="info flex">
                 <span class="user flex">
                     ************
                 </span>
-                <button class="edit-btn">
-                    Edit
-                </button>
+                <div class="ctn flex">
+                    <button id="edit-p" class="apply-btn flex" onclick="editPassword()">
+                        Edit
+                    </button>
+                    <button id="cancel-p" class="apply-btn flex off" onclick="closePassword()">
+                        Cancel
+                    </button>
+                </div>
+            </li>
+            <li id="edit-password" class="info flex">
+                <div class="repeat flex">
+                    <div class="input-control twice">
+                        <label for="password"></label>
+                        <input id="password" type="password" placeholder="enter new password">
+                    </div>
+                    <div class="input-control twice">
+                        <label for="password"></label>
+                        <input id="password" type="password" placeholder="repeat password">
+                    </div>
+                </div>
+                <div class="ctn flex">
+                    <button class="apply-btn flex">
+                        Apply
+                    </button>
+                </div>
             </li>
         </ul>
-        <div class="ctn flex">
-            <button class="apply-btn flex">
-                Apply
-            </button>
-        </div>
-    </div> 
+    </div>
 </body>
