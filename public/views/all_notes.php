@@ -36,8 +36,8 @@ if(!isset($_COOKIE['user'])) {
             <?php endforeach; ?>
     </div>
     <div class="button-container">
-        <button class="add-button" onclick="openAdd()"></button>
+        <button class="add-button" onclick="openAdd()">+</button>
     </div>
-    <?php include('add_note_form.php') ?>
+    <?php include('add_note_all.php') ?>
 </body>
 </html>

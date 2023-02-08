@@ -1,7 +1,7 @@
 
 .form-popup {
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 5555;
     bottom: 1rem;
     width: 50%;
@@ -15,7 +15,7 @@
     align-items: center;
     border: solid 1px #707070;
     border-radius: 10px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0 0 no-repeat padding-box;
     height: 75%;
 }
 
@@ -26,7 +26,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #FF7C00 0%, #BAC000 100%) 0 0 no-repeat padding-box;
     border-radius: 10px 10px 0 0;
     border: solid 1px #707070;
 }
