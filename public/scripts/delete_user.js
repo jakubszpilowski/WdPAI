@@ -10,7 +10,7 @@ const deleteUser = (user, userRow) => {
            username: user
        })
    }).then(function (response){
-        setSuccess("User deleted successfully")
+        setSuccess("User " + user + " deleted successfully")
         userRow.remove()
         return response.json();
    })
