@@ -15,6 +15,7 @@ Routing::get('all', 'NoteController');
 Routing::post('add_note_in_all', 'NoteController');
 Routing::post('add_note','NoteController');
 Routing::post('delete_note', 'NoteController');
+Routing::post('delete_notes', 'NoteController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('logout', 'SecurityController');

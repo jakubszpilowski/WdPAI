@@ -76,12 +76,28 @@ class NoteController extends AppController {
         $this->render('all_notes', ['notes' => $this->noteRepository->getAllNotes(), 'messages' => ['Note added successfully']]);
     }
 
-    public function delete_note(int $id){
-        $this->noteRepository->deleteNote($id);
+    public function delete_note(){
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+            $this->noteRepository->deleteNote($decoded['id_note']);
+            http_response_code(200);
+            echo json_encode($this->noteRepository->getUpdate());
+        }
     }
 
-    public function editNote(){
+    public function delete_notes() {
+        $contentType = isset($_SERVER['CONTENT_TYPE']) ? trim($_SERVER['CONTENT_TYPE']) : '';
 
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            $this->noteRepository->deleteNote($decoded['id_note']);
+            http_response_code(200);
+        }
     }
 
     public function all(){

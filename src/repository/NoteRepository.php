@@ -97,4 +97,22 @@ class NoteRepository extends Repository
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    public function getUpdate() {
+        $stmt = $this->database->connect()->prepare('
+            SELECT  nt.id as id,
+                    nt.title as title,
+                    nt.note_date as dat,
+                    nt.details as details,
+                    nt.id_user as id_user
+            FROM database.public.notes nt
+            WHERE id_user = :id_user
+            ORDER BY created_at desc 
+            LIMIT 3
+        ');
+
+        $stmt->bindParam(':id_user', $_SESSION['id_user'], PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

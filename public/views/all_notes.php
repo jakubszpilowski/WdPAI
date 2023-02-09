@@ -16,6 +16,7 @@ if(!isset($_COOKIE['user'])) {
     <link rel="stylesheet" type="text/css" href="/public/css/add_note.css">
     <script src="/public/scripts/nav.js" defer></script>
     <script src="/public/scripts/add.js" defer></script>
+    <script src="/public/scripts/delete_note_all.js" defer></script>
     <title>All</title>
 </head>
 <body>
