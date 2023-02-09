@@ -90,7 +90,8 @@ class UserRepository extends Repository
             SELECT u.username, 
                    u.password, 
                    u.email, 
-                   r.role 
+                   r.role,
+                   u.id_user
             FROM database.public.users u 
             INNER JOIN database.public.roles r 
                 ON r.id_role = u.id_role;
@@ -201,5 +202,28 @@ class UserRepository extends Repository
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stmt->execute();
+    }
+
+    public function deleteUser(string $username) {
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM database.public.users WHERE username = :username;
+        ');
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+    }
+
+    public function getUserListUpdated() {
+        $stmt = $this->database->connect()->prepare('
+            SELECT u.username, 
+                   u.password, 
+                   u.email, 
+                   r.role 
+            FROM database.public.users u 
+            INNER JOIN database.public.roles r 
+                ON r.id_role = u.id_role;
+        ');
+
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -67,4 +67,17 @@ class UserController extends AppController
             http_response_code(200);
         }
     }
+
+    public function delete_user() {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+        $userRepository = new UserRepository();
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            $userRepository->deleteUser($decoded['username']);
+            http_response_code(200);
+        }
+    }
 }

@@ -19,6 +19,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::post('logout', 'SecurityController');
 Routing::get('admin', 'SecurityController');
+Routing::post('delete_user', 'UserController');
 Routing::post('change_username', 'UserController');
 Routing::post('change_email', 'UserController');
 Routing::post('change_password', 'UserController');

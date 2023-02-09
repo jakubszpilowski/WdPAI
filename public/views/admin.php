@@ -12,6 +12,7 @@ if(!isset($_COOKIE['user'])) {
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style_admin.css">
     <script src="/public/scripts/nav.js" defer></script>
+    <script src="/public/scripts/delete_user.js" defer></script>
     <title>Admin panel</title>
 </head>
 <body>
@@ -39,23 +40,24 @@ if(!isset($_COOKIE['user'])) {
         </nav>
     </header>
     <div class="container flex">
+        <div class="message-div"></div>
         <table>
             <tr class="header">
                 <th>username</th>
-                <th>password</th>
+                <th id="pwd" >password</th>
                 <th>email</th>
                 <th>role</th>
                 <th>action</th>
             </tr>
-            <?php foreach ($users as $user): ?>
-                <tr>
-                    <td><?= $user->getUsername(); ?></td>
-                    <td><?= $user->getPassword(); ?></td>
-                    <td><?= $user->getEmail(); ?></td>
-                    <td><?= $user->getRole(); ?></td>
+            <?php if(isset($users)) foreach ($users as $user): ?>
+                <tr id="user-info">
+                    <td id="usrname"><?= $user->getUsername(); ?></td>
+                    <td id="pwd"><?= $user->getPassword(); ?></td>
+                    <td id="email"><?= $user->getEmail(); ?></td>
+                    <td id="role"><?= $user->getRole(); ?></td>
                     <td>
                         <?php if($user->getRole() == 'user') : ?>
-                            <button class="delete-user"></button>
+                            <button id="dlt" class="delete-user"></button>
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -63,3 +65,13 @@ if(!isset($_COOKIE['user'])) {
         </table>
     </div> 
 </body>
+
+<template id="user-template">
+    <td id="usrname">username</td>
+    <td id="pwd">password</td>
+    <td id="email">email</td>
+    <td id="role">role</td>
+    <td>
+            <button class="delete-user"></button>
+    </td>
+</template>
