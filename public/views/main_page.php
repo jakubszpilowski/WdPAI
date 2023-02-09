@@ -15,6 +15,7 @@ if(!isset($_COOKIE['user'])) {
     <link rel="stylesheet" type="text/css" href="/public/css/add_note.css">
     <script src="/public/scripts/nav.js" defer></script>
     <script src="/public/scripts/add.js" defer></script>
+    <script src="/public/scripts/delete_note.js" defer></script>
     <title>Main page</title>
 </head>
 <body>
@@ -23,10 +24,10 @@ if(!isset($_COOKIE['user'])) {
     <div class="container">
         <p>Latest notes</p>
         <?php include('messages_div.php') ?>
-        <section class="first">
+        <section id="note-section" class="first">
             <?php if(isset($notes)) {?>
             <?php foreach ($notes as $note): ?>
-                <div class="note">
+                <div id="note" class="note">
                     <div id=<?=$note->getId(); ?> class="delete">
                         <button id="delete-btn" class="delete-btn"></button>
                     </div>
