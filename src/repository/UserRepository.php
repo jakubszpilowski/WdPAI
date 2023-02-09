@@ -157,4 +157,49 @@ class UserRepository extends Repository
             $user['id_user']
         );
     }
+
+    public function changeUsername(string $username, int $id_user): bool {
+        if($this->usernameTaken($username)){
+            return true;
+        }
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE database.public.users 
+            SET username = :username
+            WHERE id_user = :id_user;
+        ');
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':id_user',$id_user, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return false;
+    }
+
+    public function changeEmail(string $email, int $id_user): bool {
+        if($this->emailTaken($email)){
+            return true;
+        }
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE database.public.users 
+            SET email = :email
+            WHERE id_user = :id_user;
+        ');
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':id_user',$id_user, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return false;
+    }
+
+    public function changePassword(string $password, int $id_user): void {
+        $stmt = $this->database->connect()->prepare('
+            UPDATE ON database.public.users
+            SET password = :password
+            WHERE id_user = :id_user;
+        ');
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

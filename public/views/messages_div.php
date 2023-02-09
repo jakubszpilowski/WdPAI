@@ -1,4 +1,4 @@
-<div class="message">
+<div id="message-div" class="message">
                     <?php
                         if(isset($messages)){
                             foreach ($messages as $message){

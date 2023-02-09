@@ -46,10 +46,11 @@ if(!isset($_COOKIE['user'])) {
             </ul>
         </nav>
     </header>
+    <div id="message-div" class="message">
+    </div>
     <div class="container">
-        <?php include('messages_div.php') ?>
         <ul class="list contents flex">
-            <li class="info flex">
+            <li id="user-out" class="info flex">
                 <span class="user flex">
                     <?php if (isset($user)){?>
                     <?= $user->getUsername()?>
@@ -70,12 +71,12 @@ if(!isset($_COOKIE['user'])) {
                     <input id="username" type="text" placeholder="enter new username">
                 </div>
                 <div class="ctn flex">
-                    <button class="apply-btn flex">
+                    <button class="apply-btn flex" id="apply-username">
                         Apply
                     </button>
                 </div>
             </li>
-            <li class="info flex">
+            <li id="email-out" class="info flex">
                 <span class="user flex">
                     <?php if (isset($user)){?>
                     <?= $user->getEmail()?>
@@ -91,18 +92,12 @@ if(!isset($_COOKIE['user'])) {
                 </div>
             </li>
             <li id="edit-email" class="info flex">
-                <div class="repeat flex">
-                    <div class="input-control twice">
-                        <label for="email"></label>
-                        <input id="email" type="email" placeholder="enter new email">
-                    </div>
-                    <div class="input-control twice">
-                        <label for="email"></label>
-                        <input id="email" type="email" placeholder="repeat email">
-                    </div>
+                <div class="input-control">
+                    <label for="email"></label>
+                    <input id="email" type="email" placeholder="enter new email">
                 </div>
                 <div class="ctn flex">
-                    <button class="apply-btn flex">
+                    <button id="apply-email" class="apply-btn flex">
                         Apply
                     </button>
                 </div>
@@ -124,15 +119,15 @@ if(!isset($_COOKIE['user'])) {
                 <div class="repeat flex">
                     <div class="input-control twice">
                         <label for="password"></label>
-                        <input id="password" type="password" placeholder="enter new password">
+                        <input id="password" type="password" placeholder="enter new password" onfocusout="checkPassword(this.value)">
                     </div>
                     <div class="input-control twice">
-                        <label for="password"></label>
-                        <input id="password" type="password" placeholder="repeat password">
+                        <label for="password-repeat"></label>
+                        <input id="password-repeat" type="password" placeholder="repeat password">
                     </div>
                 </div>
                 <div class="ctn flex">
-                    <button class="apply-btn flex">
+                    <button id="apply-password" class="apply-btn flex">
                         Apply
                     </button>
                 </div>
@@ -140,3 +135,27 @@ if(!isset($_COOKIE['user'])) {
         </ul>
     </div>
 </body>
+
+<template id="username-template">
+    <span class="user flex"></span>
+    <div class="ctn flex">
+        <button id="edit-username" class="apply-btn flex" onclick="editUsername()">
+            Edit
+        </button>
+        <button id="cancel-username" class="apply-btn flex off" onclick="closeUsername()">
+            Cancel
+        </button>
+    </div>
+</template>
+
+<template id="email-template">
+    <span class="user flex"></span>
+    <div class="ctn flex">
+        <button id="edit-e" class="apply-btn flex" onclick="editEmail()">
+            Edit
+        </button>
+        <button id="cancel-e" class="apply-btn flex off" onclick="closeEmail()">
+            Cancel
+        </button>
+    </div>
+</template>

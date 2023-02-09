@@ -114,17 +114,16 @@ span {
 
 .container {
     width: 80%;
-    height: 85%;
+    height: 80%;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #FFFFFFF5 0 0 no-repeat padding-box;
     box-shadow: inset 0 6px 6px #00000029;
     border: 1px solid #707070;
     border-radius: 30px;
-
-    margin-top: 1rem;
 }
 
 .contents {
@@ -211,6 +210,23 @@ input {
     width: 100%;
 }
 
+.message {
+    width: 50%;
+    height: 1.5rem;
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.success {
+    color: #44f644;
+}
+
+.message.wrong {
+    color: red;
+}
+
 @media only screen and (max-device-width: 700px){
     .navigation-bar{
         width: 70%;
@@ -224,6 +240,11 @@ input {
         justify-content: center;
         align-items: center;
 
+    }
+
+    .message {
+        height: 3.5rem;
+        font-size: 2rem;
     }
 
     .apply-btn {
@@ -361,5 +382,11 @@ input {
 
     .apply-btn {
         width: 75%;
+    }
+
+    .message {
+        margin-top: 2rem;
+        height: 4rem;
+        font-size: 3rem;
     }
 }
