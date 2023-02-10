@@ -80,7 +80,7 @@ class SecurityController extends AppController
         $id_user = $_SESSION['id_user'];
 
         if(!$userRepository->isAdmin($id_user)) {
-            return $this->render('login', ['messages' => ['You are not an admin!']]);
+            return $this->render('main_page', ['messages' => ['You are not an admin!'], 'flag' => true]);
         }
 
         $users = $userRepository->getAllUsers();
