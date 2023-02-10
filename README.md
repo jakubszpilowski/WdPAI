@@ -43,7 +43,7 @@ Aplikacja do tworzenia notatek
 ## Additional info
 - Niestety nie udało mi się zaimplementować kontrolera do widoku `week_page`, 
 ale zostawiłem go na pasku nawigacyjnym, ponieważ sam widok został przeze mnie 
-zrobiony w CSS i jest w pełni responsywny, dlatego myślę, że go zobaczyć.
+zrobiony w CSS i jest w pełni responsywny, dlatego myślę, że warto go zobaczyć.
 - Dostęp do panelu admina: `/admin`
 - Rolę admina można ustawić z poziomu bazy danych, ale domyślnie jest w 
 systemie jeden administrator, dlatego podam tu dane dostępowe (username: `jannowak`, 
