@@ -47,5 +47,6 @@ zrobiony w CSS i jest w pełni responsywny, dlatego myślę, że warto go zobacz
 - Dostęp do panelu admina: `/admin`
 - Rolę admina można ustawić z poziomu bazy danych, ale domyślnie jest w 
 systemie jeden administrator, dlatego podam tu dane dostępowe (username: `jannowak`, 
-password: `12345`) - dane testowe (nie zwracać uwagi)
+password: `12345`) - dane testowe (nie zwracać uwagi - dodałem później ograniczenia
+przy rejestracji)
 - Pozdrawiam i życzę miłego dnia/wieczoru :)
