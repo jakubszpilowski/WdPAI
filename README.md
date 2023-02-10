@@ -4,9 +4,9 @@ Repozytorium zawierające projekt z przedmiotu Wstęp do Projektowania Aplikacji
 Aplikacja do tworzenia notatek
 
 ## Table of contents
-* [General info] (#general-info)
-* [Technologies] (#technologies)
-* [Usage] (#usage)
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Usage](#usage)
 
 ## General info
 - Register and log into the app
